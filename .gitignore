@@ -1,5 +1,6 @@
 # Ignorar node_modules en todas las subcarpetas
 **/node_modules/
+node_modules/
 
 # Ignorar archivos del sistema
 .DS_Store
