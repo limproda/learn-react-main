@@ -1,5 +1,6 @@
-import { createRoot } from "react-dom/client"
-const root = createRoot(document.getElementById("root"))
+import { createRoot } from 'react-dom/client'
+
+const root = createRoot(document.getElementById('root'))
 
 /**
  * Challenge (part 1):
@@ -11,6 +12,18 @@ const root = createRoot(document.getElementById("root"))
  * Render the Page component.
  */
 
+function Page(){
+    return (
+        <ul>
+            <li>Was first released in 2013</li>
+            <li>Was orginally created by Jordan Walke</li>
+            <li>Has well over 100K stars on Github</li>
+            <li>Is maintained by Meta</li>
+            <li>Powers thousands of enterprise apps, incluiding mobile apps</li>
+        </ul>
+    )
+}
+
 root.render(
-    
+    <Page />
 )
