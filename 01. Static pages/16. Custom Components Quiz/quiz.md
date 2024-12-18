@@ -1,5 +1,6 @@
 1. What is a React component?
 
+Function that return React elements.
 
 2. What's wrong with this code?
 ```
@@ -10,6 +11,8 @@ function myComponent() {
 }
 ```
 
+The function name must begin with an uppercase. It's suppose to be called "MyComponent"
+ç
 3. What's wrong with this code?
 ```
 function Header() {
@@ -20,5 +23,13 @@ function Header() {
     )
 }
 
+
+
 root.render(Header())
 ```
+
+We don't call the function as a regular function but we surround it with brackets, as following:
+
+root.render(
+    <Header />
+)
