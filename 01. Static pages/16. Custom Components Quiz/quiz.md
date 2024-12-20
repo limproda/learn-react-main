@@ -12,7 +12,8 @@ function myComponent() {
 ```
 
 The function name must begin with an uppercase. It's suppose to be called "MyComponent"
-ç
+
+
 3. What's wrong with this code?
 ```
 function Header() {

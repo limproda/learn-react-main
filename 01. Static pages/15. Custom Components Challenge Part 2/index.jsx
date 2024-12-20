@@ -17,7 +17,6 @@ Part 2:
     "© 20xx <last name here> development. All rights reserved."
  */
 
-
 function Page() {
     return (
         <section>
