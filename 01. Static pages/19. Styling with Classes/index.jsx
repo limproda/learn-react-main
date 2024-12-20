@@ -11,8 +11,14 @@ const root = createRoot(document.getElementById("root"))
 function Header() {
     return (
         <header>
-            <img src="react-logo.png" width="40px" alt="React logo" />
-            
+            <img src="react-logo.png" alt="React logo" className="nav-logo" />
+            <nav>
+                <ul className="nav-list">
+                    <li className="nav-list-item">Pricing</li>
+                    <li className="nav-list-item">About</li>
+                    <li className="nav-list-item">Contact</li>
+                </ul>
+            </nav>
         </header>
     )
 }
@@ -32,7 +38,7 @@ function MainContent() {
 function Footer() {
     return (
         <footer>
-            <small>© 2024 Ziroll development. All rights reserved.</small>
+            <small>© 2024 Improda development. All rights reserved.</small>
         </footer>
     )
 }
