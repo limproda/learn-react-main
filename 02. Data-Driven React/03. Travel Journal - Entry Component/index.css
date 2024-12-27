@@ -1,5 +1,6 @@
 html, body {
     margin: 0;
+    font-family: Inter;
 }
 
 header {
@@ -9,6 +10,7 @@ header {
     align-items: center;
     color: white;
     height: 55px;
+    font-family: Inter;
 }
 
 header > img {
@@ -24,10 +26,53 @@ header > h1 {
 
 article.journal-entry {
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px;
+    gap: 5%;
+}
 
+.main-image-container {
+    width: 500px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .image-entry {
-    width: 125px;
-    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.info-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap:5%;
+
+}
+
+.marker-icon {
+    height: 20px;
+}
+
+.countryName {
+   font-weight: 500;
+}
+
+.mapLink {
+    text-decoration: underline;
+    color: black;
+    font-weight: 200;
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-date {
+    font-weight: 600;
 }
