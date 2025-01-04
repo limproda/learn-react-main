@@ -20,6 +20,7 @@ export default function App() {
                 alt: travel.img.alt
             }}
             //Se puede pasar el objeto directamente img={travel.img}
+            key={travel.id}
             title={travel.title}
             country={travel.country}
             googleMapsLink={travel.googleMapsLink}
