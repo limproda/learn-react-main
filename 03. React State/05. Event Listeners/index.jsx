@@ -5,6 +5,9 @@ function App() {
   function handleClick() {
     console.log("I was clicked!")
   }
+  function handleMouseOverPicture() {
+    console.log("Mouse over picture")
+  }
   
   /**
    * Challenge: add our new function to the button
@@ -15,8 +18,9 @@ function App() {
       <img
         src="https://picsum.photos/640/360"
         alt="Placeholder image from Picsum"
+        onMouseOver={handleMouseOverPicture}
       />
-      <button onClick={}>Click me</button>
+      <button onClick={handleClick}>Click me</button>
     </main>
   )
 }
