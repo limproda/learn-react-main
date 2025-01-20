@@ -13,13 +13,13 @@ export default function App() {
      * value of state.
      */
     function add() {
-        setCount(prevCount=> prevCount + 1)
+        setCount(prevCount => prevCount + 1)
     }
     
     // Challenge: update `substract` to use a callback function
 
     function subtract() {
-        setCount(count - 1)
+        setCount(prevCount => prevCount - 1)
     }
 
     return (
