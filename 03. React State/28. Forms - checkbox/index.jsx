@@ -13,7 +13,10 @@ function App() {
     const email = formData.get("email")
     const password = formData.get("password")
     const employmentStatus = formData.get("employmentStatus")
+    const dietaryRestrictions = formData.getAll("dietaryRestrictions")
     console.log(employmentStatus)
+    console.log(dietaryRestrictions)
+
   }
 
   return (
@@ -46,6 +49,21 @@ function App() {
         </label>
         </fieldset>
 
+        <fieldset>
+          <legend>Dietary Restrictions:</legend>
+          <label>
+            <input type="checkbox" name="dietaryRestrictions" value="kosher" />
+            Kosher
+        </label>
+          <label>
+            <input type="checkbox" name="dietaryRestrictions" value="vegan" />
+            Vegan
+        </label>
+          <label>
+            <input type="checkbox" name="dietaryRestrictions" defaultChecked={true} value="gluten-free" />
+            Gluten-free
+        </label>
+        </fieldset>
         
 
         <button>Submit</button>
