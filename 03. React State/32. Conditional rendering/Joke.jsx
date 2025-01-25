@@ -7,14 +7,17 @@ export default function Joke(props) {
      * - Add a button that toggles the value back and forth
      */
     const [isShown, setIsShown] = React.useState(false);
+    
+    function toggleShown(){
+        setIsShown(prevShown => !prevShown)
+    }
 
     console.log(isShown)
     return (
         <div>
             {props.setup && <h3>{props.setup}</h3>}
-            
-            {isShow && <p>{props.punchline}</p>}
-            <button onClick={() => setIsShown(prevShown => !prevShown )}>Show punchline</button>
+            {isShown && <p>{props.punchline}</p>}
+            <button onClick={toggleShown}>Show punchline</button>
             <hr />
         </div>
     )

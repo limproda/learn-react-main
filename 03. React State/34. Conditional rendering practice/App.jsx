@@ -2,6 +2,8 @@ import React from "react"
 
 export default function App() {
     const [unreadMessages, setUnreadMessages] = React.useState(["a", "b"])
+
+    const unread = false
     
     /**
      * Challenge:
@@ -10,7 +12,9 @@ export default function App() {
     
     return (
         <div>
-            <h1>You have _ unread messages!</h1>
+            {unreadMessages.length > 0 &&
+            <h1>You have {unreadMessages.length} unread messages!</h1> ||
+            <p>You have no messages</p>}
         </div>
     )
 }
