@@ -35,7 +35,7 @@ export default function App() {
                     aria-label="Decrease count"
                 >-</button>
 
-                <Count number/>
+                <Count number={count}/>
 
                 <button
                     className="plus"
