@@ -1,13 +1,14 @@
 import React from "react"
 import padsData from "./pads"
+import Pad from "./Pad"
 
 export default function App() {
     const [pads, setPads] = React.useState(padsData)
 
     const buttonElements = pads.map(pad => (
-        <button key={pad.id}></button>
+        <Pad key={pad.id} id={pad.id} color={pad.color} on={pad.on}/>
     ))
-    
+
     /**
      * Challenge part 2:
      * 1. Create a separate component called "Pad" and
