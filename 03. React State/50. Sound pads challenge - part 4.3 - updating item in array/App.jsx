@@ -7,6 +7,17 @@ export default function App() {
     
     function toggle(id) {
         console.log(id)
+        setPads(prevPads => prevPads.map(pad => {
+            if (pad.id === id) {
+                return {
+                    ...pad,
+                    on: !pad.on
+                }
+            }
+            return pad
+
+            //return item.id === id ? {...item, on: !item.on} : item
+        }))
         /**
          * Challenge:
          * Call setPads to update the state of the one pad that was

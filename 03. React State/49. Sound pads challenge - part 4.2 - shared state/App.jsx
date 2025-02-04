@@ -13,8 +13,12 @@ export default function App() {
      * and set it up so when they get clicked, the function runs
      */
     
+    function toggle() {
+        console.log("clicked!")
+    }
+
     const buttonElements = pads.map(pad => (
-        <Pad key={pad.id} color={pad.color} on={pad.on}/>
+        <Pad toggle={toggle} key={pad.id} color={pad.color} on={pad.on}/>
     ))
     
     return (
