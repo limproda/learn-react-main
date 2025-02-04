@@ -1,3 +1,4 @@
+import React from "react";
 export default function Pad(props) {
 /**
  * Challenge: Create state controlling whether
@@ -10,10 +11,17 @@ export default function Pad(props) {
  * Goal: clicking each pad should toggle it on and off.
  */
 
+    const [on, setOn] = React.useState(props.on);
+
+    function handleClick() {
+        setOn(prevOn => !prevOn);
+    }
+
     return (
         <button 
+            onClick={handleClick}
             style={{backgroundColor: props.color}}
-            className={props.on ? "on" : undefined}
+            className={on ? "on" : undefined}
         ></button>
     )
 }
