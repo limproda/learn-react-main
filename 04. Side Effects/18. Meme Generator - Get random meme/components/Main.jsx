@@ -30,6 +30,14 @@ export default function Main() {
         }))
     }
 
+    function handleClick() {
+        const randomMeme = allMemes[Math.floor(Math.random() * allMemes.length)]
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            imageUrl: randomMeme.url
+        }))
+    }
+
     return (
         <main>
             <div className="form">
@@ -52,7 +60,7 @@ export default function Main() {
                         value={meme.bottomText}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button onClick={handleClick}>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl} />

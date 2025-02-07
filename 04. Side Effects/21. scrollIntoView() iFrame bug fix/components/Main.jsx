@@ -1,7 +1,7 @@
 import React from "react"
 import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
-import { getRecipeFromChefClaude, getRecipeFromMistral } from "../ai"
+import { getRecipeFromMistral } from "../ai"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
@@ -12,12 +12,16 @@ export default function Main() {
     
     React.useEffect(() => {
         if (recipe !== "" && recipeSection.current !== null) {
-            recipeSection.current.scrollIntoView()
+            const yCoord = recipeSection.current.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: yCoord,
+                behavior: 'smooth'
+            });
         }
     }, [recipe])
 
     async function getRecipe() {
-        const recipeMarkdown = await getRecipeFromChefClaude(ingredients)
+        const recipeMarkdown = await getRecipeFromMistral(ingredients)
         setRecipe(recipeMarkdown)
     }
 
@@ -25,28 +29,29 @@ export default function Main() {
         const newIngredient = formData.get("ingredient")
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
-    
+
     return (
         <main>
-            <form action={addIngredient} className="add-ingredient-form">
+            <form onSubmit={(e) => { e.preventDefault(); addIngredient(new FormData(e.target)); }} className="add-ingredient-form">
                 <input
                     type="text"
                     placeholder="e.g. oregano"
                     aria-label="Add ingredient"
                     name="ingredient"
                 />
-                <button>Add ingredient</button>
+                <button type="submit">Add ingredient</button>
             </form>
 
             {ingredients.length > 0 &&
                 <IngredientsList
-                    ref={recipeSection}
                     ingredients={ingredients}
                     getRecipe={getRecipe}
                 />
             }
 
-            {recipe && <ClaudeRecipe recipe={recipe} />}
+            <div ref={recipeSection}>
+                {recipe && <ClaudeRecipe recipe={recipe} />}
+            </div>
         </main>
     )
 }

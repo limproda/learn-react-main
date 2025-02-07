@@ -1,7 +1,7 @@
 import React from "react"
 import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
-import { getRecipeFromChefClaude, getRecipeFromMistral } from "../ai"
+import { getRecipeFromMistral } from "../ai"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
@@ -16,9 +16,14 @@ export default function Main() {
      * (i.e. when `recipe` is not an empty string). How can we do that?
      */
     
+    React.useEffect(() => {
+       if (recipe && recipeSection.current ){
+        recipeSection.current.scrollIntoView()
+       }
+    }, [recipe])
 
     async function getRecipe() {
-        const recipeMarkdown = await getRecipeFromChefClaude(ingredients)
+        const recipeMarkdown = await getRecipeFromMistral(ingredients)
         setRecipe(recipeMarkdown)
     }
 

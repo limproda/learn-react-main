@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Main() {
     const [meme, setMeme] = useState({
@@ -6,7 +6,8 @@ export default function Main() {
         bottomText: "Walk into Mordor",
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
-    
+    const [memes, setMemes] = useState([])
+
     /**
      * Challenge:
      * Get an array of memes from the imgflip API as soon as
@@ -23,7 +24,11 @@ export default function Main() {
      * from using `fetch`. We'll learn why after this challenge.
      */
     
-    
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setMemes(data.data.memes))
+    }, []) 
     
     function handleChange(event) {
         const {value, name} = event.currentTarget
