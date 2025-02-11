@@ -2,7 +2,7 @@
   "name": "Scrim-s06j1nq",
   "description": "https://scrimba.com/learn-react-c0e/~0y62",
   "scripts": {
-    "start": "vite",
+    "start": "vite --port 3000",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

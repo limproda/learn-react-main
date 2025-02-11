@@ -14,7 +14,24 @@
  *      - Use flexbox on main to center the dice container
  *        in the center of the page
  */
+import Die from "./Die.jsx"
 
 export default function App() {
-    return <main></main>
+    return (
+        <main>
+        <div className='container'>
+            <Die value= '1'/>
+            <Die value= '1'/>
+            <Die value= '1'/>
+            <Die value= '1'/>
+            <Die value= '1'/>
+            <Die value= '1'/>
+            <Die value= '1'/>
+            <Die value= '1'/>
+            <Die value= '1'/>
+            <Die value= '1'/>
+        </div>
+    </main>
+    )
+
 }
