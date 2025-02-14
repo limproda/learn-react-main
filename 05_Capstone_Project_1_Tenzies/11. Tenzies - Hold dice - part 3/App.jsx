@@ -24,8 +24,14 @@ export default function App() {
      * just updating the `value` property of the die object.
      */
 
+    function generateNewDice() {
+        return Math.ceil(Math.random() * 6)
+    }
+
     function rollDice() {
-        setDice(generateAllNewDice())
+        setDice(oldDice => oldDice.map(die =>
+            die.isHeld ? die : { ...die, value: generateNewDice() }
+        ));
     }
 
     function hold(id) {

@@ -25,6 +25,9 @@ export default function App() {
      */
 
     function rollDice() {
+        if(gameWon) {
+            window.location.reload()
+        }
         setDice(oldDice => oldDice.map(die =>
             die.isHeld ?
                 die :

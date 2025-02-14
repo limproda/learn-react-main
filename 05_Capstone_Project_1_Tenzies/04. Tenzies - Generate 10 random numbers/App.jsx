@@ -30,7 +30,7 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <button className={roll-dice} onClick={rollDice}>Roll</button>
+            <button className="roll-dice" onClick={rollDice}>Roll</button>
         </main>
     )
 }
